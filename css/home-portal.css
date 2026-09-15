@@ -1,0 +1,252 @@
+/* Clean academic admin-portal home page */
+
+.home-portal {
+    margin: 0 auto;
+    max-width: 1080px;
+}
+
+.portal-intro {
+    border-bottom: 1px solid #dbe3ed;
+    padding: 18px 0 34px;
+}
+
+.portal-kicker {
+    color: #2563eb;
+    font-size: 0.78rem;
+    font-weight: 750;
+    letter-spacing: 0.09em;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+}
+
+.portal-intro h1 {
+    color: #17324d;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin: 0;
+    max-width: 760px;
+}
+
+.portal-summary {
+    color: #64748b;
+    font-size: 1.05rem;
+    margin: 16px 0 0;
+    max-width: 710px;
+}
+
+.portal-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.portal-actions .button {
+    min-width: 142px;
+}
+
+.portal-section {
+    margin-top: 36px;
+}
+
+.portal-section-heading {
+    align-items: end;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.portal-section-heading h2 {
+    color: #17324d;
+    font-size: 1.45rem;
+    margin: 0;
+}
+
+.portal-section-heading > p {
+    color: #64748b;
+    margin: 0;
+    max-width: 430px;
+    text-align: right;
+}
+
+.portal-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.portal-card {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #dbe3ed;
+    border-radius: 12px;
+    color: #243447;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: 46px minmax(0, 1fr) auto;
+    min-height: 112px;
+    padding: 18px;
+    text-decoration: none;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.portal-card:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    color: #243447;
+    transform: translateY(-2px);
+}
+
+.portal-card:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.3);
+    outline-offset: 3px;
+}
+
+.portal-card-icon {
+    align-items: center;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 10px;
+    color: #2563eb;
+    display: inline-flex;
+    height: 46px;
+    justify-content: center;
+    width: 46px;
+}
+
+.portal-card-icon svg {
+    height: 23px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: 23px;
+}
+
+.portal-card-content {
+    display: block;
+    min-width: 0;
+}
+
+.portal-card-content strong {
+    color: #17324d;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.portal-card-content > span {
+    color: #64748b;
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.portal-card-link {
+    color: #2563eb;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.portal-help {
+    border-top: 1px solid #dbe3ed;
+    margin-top: 40px;
+    padding-top: 32px;
+}
+
+.portal-help-heading {
+    align-items: start;
+}
+
+.portal-faq-list {
+    border: 1px solid #dbe3ed;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.portal-faq-item {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.portal-faq-item:last-child {
+    border-bottom: 0;
+}
+
+.portal-faq-item summary {
+    color: #17324d;
+    cursor: pointer;
+    font-weight: 650;
+    list-style-position: inside;
+    padding: 15px 18px;
+}
+
+.portal-faq-item summary:hover {
+    background: #f8fafc;
+}
+
+.portal-faq-item p {
+    color: #64748b;
+    margin: 0;
+    padding: 0 18px 16px 38px;
+}
+
+@media (max-width: 760px) {
+    .portal-intro {
+        padding-top: 4px;
+    }
+
+    .portal-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .portal-section-heading > p {
+        max-width: none;
+        text-align: left;
+    }
+
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .portal-intro h1 {
+        font-size: 2rem;
+    }
+
+    .portal-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .portal-actions .button {
+        width: 100%;
+    }
+
+    .portal-card {
+        grid-template-columns: 42px minmax(0, 1fr);
+        min-height: 0;
+        padding: 16px;
+    }
+
+    .portal-card-icon {
+        height: 42px;
+        width: 42px;
+    }
+
+    .portal-card-link {
+        grid-column: 2;
+        margin-top: 2px;
+    }
+
+    .portal-faq-item p {
+        padding-left: 18px;
+    }
+}

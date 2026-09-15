@@ -28,12 +28,12 @@ $breadcrumb = $breadcrumbMap[$currentPage] ?? null;
     <title><?= htmlspecialchars($pageTitle) ?></title>
     <link rel="stylesheet" href="css/style.css?v=<?= filemtime(__DIR__ . '/../css/style.css') ?>">
     <link rel="stylesheet" href="css/professional-ui.css?v=<?= filemtime(__DIR__ . '/../css/professional-ui.css') ?>">
-    <link rel="stylesheet" href="css/home-portal.css?v=<?= filemtime(__DIR__ . '/../css/home-portal.css') ?>">
+    <link rel="stylesheet" href="css/learning-inspired.css?v=<?= filemtime(__DIR__ . '/../css/learning-inspired.css') ?>">
 </head>
 <body>
 
-<header class="site-header home-site-header">
-    <div class="container">
+<header class="site-header">
+    <div class="container site-header-inner">
         <a
             class="home-brand"
             href="index.php"
@@ -41,46 +41,64 @@ $breadcrumb = $breadcrumbMap[$currentPage] ?? null;
         >
             <span class="home-brand-logo" aria-hidden="true">
                 <svg viewBox="0 0 48 48">
-                    <path
-                        d="M8 16L24 8l16 8-16 8L8 16Z"
-                        fill="currentColor"
-                    />
-
-                    <path
-                        d="M14 22v9c0 4 5 8 10 8s10-4 10-8v-9l-10 5-10-5Z"
-                        fill="currentColor"
-                        opacity=".82"
-                    />
+                    <path d="M8 16L24 8l16 8-16 8L8 16Z" fill="currentColor" />
+                    <path d="M14 22v9c0 4 5 8 10 8s10-4 10-8v-9l-10 5-10-5Z" fill="currentColor" opacity=".82" />
                 </svg>
             </span>
-
-            <span>Student Progress Tracker</span>
+            <span class="brand-copy">
+                <strong>Student Progress Tracker</strong>
+                <small>Academic progress management</small>
+            </span>
         </a>
-    </div>
-</header>
 
-<nav class="main-nav" id="primary-navigation" aria-label="Primary navigation">
-    <div class="container">
         <button
             class="nav-toggle"
             type="button"
             aria-expanded="false"
-            aria-controls="primary-navigation-links"
+            aria-controls="primary-navigation"
         >
             <span aria-hidden="true">☰</span>
             <span class="nav-toggle-label">Menu</span>
         </button>
 
-        <div class="nav-links" id="primary-navigation-links">
-            <a class="<?= $currentPage === 'index.php' ? 'active' : '' ?>" href="index.php">Home</a>
-            <a class="<?= $currentPage === 'dashboard.php' ? 'active' : '' ?>" href="dashboard.php">Dashboard</a>
-            <a class="<?= in_array($currentPage, $studentPages, true) ? 'active' : '' ?>" href="students.php">Students</a>
-            <a class="<?= in_array($currentPage, $assessmentPages, true) ? 'active' : '' ?>" href="assessments.php">Assessments</a>
-            <a class="<?= in_array($currentPage, $resultPages, true) ? 'active' : '' ?>" href="results.php">Results</a>
-            <a class="<?= $currentPage === 'progress.php' ? 'active' : '' ?>" href="progress.php">Progress</a>
-        </div>
+        <nav class="main-nav" id="primary-navigation" aria-label="Primary navigation">
+            <div class="nav-links">
+                <a
+                    class="<?= $currentPage === 'index.php' ? 'active' : '' ?>"
+                    href="index.php"
+                    <?= $currentPage === 'index.php' ? 'aria-current="page"' : '' ?>
+                >Home</a>
+                <a
+                    class="<?= $currentPage === 'dashboard.php' ? 'active' : '' ?>"
+                    href="dashboard.php"
+                    <?= $currentPage === 'dashboard.php' ? 'aria-current="page"' : '' ?>
+                >Dashboard</a>
+                <a
+                    class="<?= in_array($currentPage, $studentPages, true) ? 'active' : '' ?>"
+                    href="students.php"
+                    <?= in_array($currentPage, $studentPages, true) ? 'aria-current="page"' : '' ?>
+                >Students</a>
+                <a
+                    class="<?= in_array($currentPage, $assessmentPages, true) ? 'active' : '' ?>"
+                    href="assessments.php"
+                    <?= in_array($currentPage, $assessmentPages, true) ? 'aria-current="page"' : '' ?>
+                >Assessments</a>
+                <a
+                    class="<?= in_array($currentPage, $resultPages, true) ? 'active' : '' ?>"
+                    href="results.php"
+                    <?= in_array($currentPage, $resultPages, true) ? 'aria-current="page"' : '' ?>
+                >Results</a>
+                <a
+                    class="<?= $currentPage === 'progress.php' ? 'active' : '' ?>"
+                    href="progress.php"
+                    <?= $currentPage === 'progress.php' ? 'aria-current="page"' : '' ?>
+                >Progress</a>
+            </div>
+        </nav>
+
+        <a class="header-action" href="add_result.php">+ Record Mark</a>
     </div>
-</nav>
+</header>
 
 <?php if ($breadcrumb): ?>
     <div class="breadcrumb-shell">

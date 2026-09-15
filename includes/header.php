@@ -1,11 +1,24 @@
 <?php
 $pageTitle = $pageTitle ?? 'Student Progress Tracker';
 $currentPage = basename($_SERVER['PHP_SELF']);
-$isHomePage = $currentPage === 'index.php';
 
 $studentPages = ['students.php','add_student.php','view_student.php','edit_student.php','delete_student.php'];
 $assessmentPages = ['assessments.php','add_assessment.php','edit_assessment.php','delete_assessment.php'];
 $resultPages = ['results.php','add_result.php','edit_feedback.php'];
+
+$breadcrumbMap = [
+    'add_student.php' => ['Students', 'students.php', 'Add Student'],
+    'view_student.php' => ['Students', 'students.php', 'View Student'],
+    'edit_student.php' => ['Students', 'students.php', 'Edit Student'],
+    'delete_student.php' => ['Students', 'students.php', 'Delete Student'],
+    'add_assessment.php' => ['Assessments', 'assessments.php', 'Create Assessment'],
+    'edit_assessment.php' => ['Assessments', 'assessments.php', 'Edit Assessment'],
+    'delete_assessment.php' => ['Assessments', 'assessments.php', 'Delete Assessment'],
+    'add_result.php' => ['Results', 'results.php', 'Record Mark'],
+    'edit_feedback.php' => ['Results', 'results.php', 'Assessment Feedback'],
+];
+
+$breadcrumb = $breadcrumbMap[$currentPage] ?? null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +27,7 @@ $resultPages = ['results.php','add_result.php','edit_feedback.php'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($pageTitle) ?></title>
     <link rel="stylesheet" href="css/style.css?v=<?= filemtime(__DIR__ . '/../css/style.css') ?>">
+    <link rel="stylesheet" href="css/professional-ui.css?v=<?= filemtime(__DIR__ . '/../css/professional-ui.css') ?>">
 </head>
 <body>
 
@@ -39,9 +53,7 @@ $resultPages = ['results.php','add_result.php','edit_feedback.php'];
                 </svg>
             </span>
 
-            <span>
-                Student Progress Tracker
-            </span>
+            <span>Student Progress Tracker</span>
         </a>
     </div>
 </header>
@@ -68,5 +80,19 @@ $resultPages = ['results.php','add_result.php','edit_feedback.php'];
         </div>
     </div>
 </nav>
+
+<?php if ($breadcrumb): ?>
+    <div class="breadcrumb-shell">
+        <nav class="container breadcrumb" aria-label="Breadcrumb">
+            <a href="<?= htmlspecialchars($breadcrumb[1]) ?>">
+                <?= htmlspecialchars($breadcrumb[0]) ?>
+            </a>
+            <span class="breadcrumb-separator" aria-hidden="true">›</span>
+            <span class="breadcrumb-current" aria-current="page">
+                <?= htmlspecialchars($breadcrumb[2]) ?>
+            </span>
+        </nav>
+    </div>
+<?php endif; ?>
 
 <main class="container main-content" id="main-content">

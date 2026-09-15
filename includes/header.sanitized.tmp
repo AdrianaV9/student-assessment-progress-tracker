@@ -1,4 +1,0 @@
-<?php
-$pageTitle = $pageTitle ?? 'Student Progress Tracker';
-$currentPage = basename($_SERVER['PHP_SELF']);
-?>

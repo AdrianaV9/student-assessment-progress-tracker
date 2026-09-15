@@ -81,7 +81,7 @@ require __DIR__ . '/includes/header.php';
 <section class="panel">
     <?php if ($students): ?>
         <div class="table-wrapper">
-            <table class="data-table">
+            <table class="data-table progress-table">
                 <thead>
                     <tr>
                         <th>Student</th>

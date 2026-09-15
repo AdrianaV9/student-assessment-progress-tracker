@@ -6,6 +6,6 @@
     </div>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="js/script.js?v=<?= filemtime(__DIR__ . '/../js/script.js') ?>"></script>
 </body>
 </html>

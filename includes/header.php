@@ -28,6 +28,7 @@ $breadcrumb = $breadcrumbMap[$currentPage] ?? null;
     <title><?= htmlspecialchars($pageTitle) ?></title>
     <link rel="stylesheet" href="css/style.css?v=<?= filemtime(__DIR__ . '/../css/style.css') ?>">
     <link rel="stylesheet" href="css/professional-ui.css?v=<?= filemtime(__DIR__ . '/../css/professional-ui.css') ?>">
+    <link rel="stylesheet" href="css/home-portal.css?v=<?= filemtime(__DIR__ . '/../css/home-portal.css') ?>">
 </head>
 <body>
 

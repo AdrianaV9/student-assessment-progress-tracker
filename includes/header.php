@@ -29,6 +29,7 @@ $breadcrumb = $breadcrumbMap[$currentPage] ?? null;
     <link rel="stylesheet" href="css/style.css?v=<?= filemtime(__DIR__ . '/../css/style.css') ?>">
     <link rel="stylesheet" href="css/professional-ui.css?v=<?= filemtime(__DIR__ . '/../css/professional-ui.css') ?>">
     <link rel="stylesheet" href="css/learning-inspired.css?v=<?= filemtime(__DIR__ . '/../css/learning-inspired.css') ?>">
+    <link rel="stylesheet" href="css/insights.css?v=<?= filemtime(__DIR__ . '/../css/insights.css') ?>">
 </head>
 <body>
 
@@ -93,6 +94,11 @@ $breadcrumb = $breadcrumbMap[$currentPage] ?? null;
                     href="progress.php"
                     <?= $currentPage === 'progress.php' ? 'aria-current="page"' : '' ?>
                 >Progress</a>
+                <a
+                    class="<?= $currentPage === 'insights.php' ? 'active' : '' ?>"
+                    href="insights.php"
+                    <?= $currentPage === 'insights.php' ? 'aria-current="page"' : '' ?>
+                >Insights</a>
             </div>
         </nav>
 

@@ -17,8 +17,6 @@ $resultPages = ['results.php','add_result.php','edit_feedback.php'];
 </head>
 <body>
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
-
 <header class="site-header home-site-header">
     <div class="container">
         <a
@@ -49,13 +47,25 @@ $resultPages = ['results.php','add_result.php','edit_feedback.php'];
 </header>
 
 <nav class="main-nav" id="primary-navigation" aria-label="Primary navigation">
-    <div class="container nav-links">
-        <a class="<?= $currentPage === 'index.php' ? 'active' : '' ?>" href="index.php">Home</a>
-        <a class="<?= $currentPage === 'dashboard.php' ? 'active' : '' ?>" href="dashboard.php">Dashboard</a>
-        <a class="<?= in_array($currentPage, $studentPages, true) ? 'active' : '' ?>" href="students.php">Students</a>
-        <a class="<?= in_array($currentPage, $assessmentPages, true) ? 'active' : '' ?>" href="assessments.php">Assessments</a>
-        <a class="<?= in_array($currentPage, $resultPages, true) ? 'active' : '' ?>" href="results.php">Results</a>
-        <a class="<?= $currentPage === 'progress.php' ? 'active' : '' ?>" href="progress.php">Progress</a>
+    <div class="container">
+        <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation-links"
+        >
+            <span aria-hidden="true">☰</span>
+            <span class="nav-toggle-label">Menu</span>
+        </button>
+
+        <div class="nav-links" id="primary-navigation-links">
+            <a class="<?= $currentPage === 'index.php' ? 'active' : '' ?>" href="index.php">Home</a>
+            <a class="<?= $currentPage === 'dashboard.php' ? 'active' : '' ?>" href="dashboard.php">Dashboard</a>
+            <a class="<?= in_array($currentPage, $studentPages, true) ? 'active' : '' ?>" href="students.php">Students</a>
+            <a class="<?= in_array($currentPage, $assessmentPages, true) ? 'active' : '' ?>" href="assessments.php">Assessments</a>
+            <a class="<?= in_array($currentPage, $resultPages, true) ? 'active' : '' ?>" href="results.php">Results</a>
+            <a class="<?= $currentPage === 'progress.php' ? 'active' : '' ?>" href="progress.php">Progress</a>
+        </div>
     </div>
 </nav>
 

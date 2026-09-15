@@ -1,0 +1,35 @@
+# Operating system / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local environment and secret files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.jks
+*.keystore
+*.htpasswd
+secrets/
+config/local.php
+config/secrets.php
+
+# Local databases, exports, backups and logs
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.bak
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*~
